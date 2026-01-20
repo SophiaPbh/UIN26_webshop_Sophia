@@ -44,35 +44,35 @@ h2 {
     font-size: 2.5rem;
     font-weight: 900;
 }
-
 h3 {
-    font-weight:300px;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    padding:1rem;
-    align-items:center;
-}
-
-
+/* HOVEDOMRÅDE */
 #container {
     width: 100%;
     max-width: var(--maxwidth);
     background-color: var(--white);
     margin: 0 auto;
+    position: relative;
+}
 
+header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #cart-button {
-    width:70px;
+    width: 70px;
     background: transparent;
-    border:none;
+    border: none;
     position: relative;
 
     div {
-        background: var(--red); 
+        background: var(--red);
         width: 30px;
         height: 30px;
         border-radius: 50%;
@@ -81,7 +81,7 @@ header {
         justify-content: center;
         align-items: center;
         position: absolute;
-        top: -5px;
+        top: -15px;
         left: -12px;
     }
 }
@@ -96,6 +96,7 @@ nav {
         text-transform: uppercase;
         color: var(--white);
         text-decoration: none;
+        
 
         &:hover {
             background: var(--yellow);
@@ -106,38 +107,40 @@ nav {
 }
 
 main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding-left:1rem;
-    padding-right:1rem;
-    gap: 1rem;
-
-    h2 {
-        width:100%;
-        text-align:center;
-        text-transform:uppercase;
+    #product-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        gap: 1rem;
     }
 
-    .product-card{
+    h2 {
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .product-card {
         max-width: calc(33% - 2rem);
-        background-color: var(--black);
+        background: var(--black);
         color: var(--white);
-        padding:1rem;
-        box-sizing:border-box;
+        padding: 1rem;
+        box-sizing: border-box;
         border-bottom: 1rem solid var(--green);
         margin-bottom: 1rem;
 
         a {
             color: var(--yellow);
-            text-decoration:none;
+            text-decoration: none;
         }
 
         h3 {
             margin: 0;
             text-transform: uppercase;
         }
-
+        
         p {
             margin: 0;
             margin-bottom: 5px;
@@ -148,11 +151,33 @@ main {
             color: var(--white);
             font-family: "Rubik", sans-serif;
             font-size: 1rem;
-            padding:0.5rem 1rem;
+            padding: 0.5rem 1rem;
         }
 
         img {
-            width:100%;
+            width: 100%;
         }
+    }
+}
+
+/* HANDLEVOGN */
+#cart {
+    width: 550px;
+    background: var(--black);
+    color: var(--white);
+    border-left: 0.5rem solid var(--green);
+    border-bottom: 0.5rem solid var(--green);
+    padding: 1rem;
+    position: absolute;
+    top: 74px;
+    right: 0;
+
+    &.hidden {
+        visibility: hidden;
+    }
+
+    table {
+        width: 100%;
+        color: var(--white);
     }
 }
